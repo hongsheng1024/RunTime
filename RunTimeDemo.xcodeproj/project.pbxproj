@@ -16,6 +16,7 @@
 		1F3BE8B62181A40500037DA3 /* FunViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3BE8B52181A40500037DA3 /* FunViewController.m */; };
 		1F3BE8B92181A52B00037DA3 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3BE8B82181A52B00037DA3 /* Person.m */; };
 		1F3BE8BC2181C5E300037DA3 /* Person+DefaultOJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3BE8BB2181C5E300037DA3 /* Person+DefaultOJ.m */; };
+		1F924B16218373740012876D /* TestObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F924B15218373740012876D /* TestObj.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		1F3BE8B82181A52B00037DA3 /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		1F3BE8BA2181C5E300037DA3 /* Person+DefaultOJ.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Person+DefaultOJ.h"; sourceTree = "<group>"; };
 		1F3BE8BB2181C5E300037DA3 /* Person+DefaultOJ.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Person+DefaultOJ.m"; sourceTree = "<group>"; };
+		1F924B14218373740012876D /* TestObj.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestObj.h; sourceTree = "<group>"; };
+		1F924B15218373740012876D /* TestObj.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestObj.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +78,8 @@
 				1F3BE8B52181A40500037DA3 /* FunViewController.m */,
 				1F3BE8B72181A52B00037DA3 /* Person.h */,
 				1F3BE8B82181A52B00037DA3 /* Person.m */,
+				1F924B14218373740012876D /* TestObj.h */,
+				1F924B15218373740012876D /* TestObj.m */,
 				1F3BE8BA2181C5E300037DA3 /* Person+DefaultOJ.h */,
 				1F3BE8BB2181C5E300037DA3 /* Person+DefaultOJ.m */,
 				1F3BE8A42181A26700037DA3 /* Main.storyboard */,
@@ -163,6 +168,7 @@
 				1F3BE8B62181A40500037DA3 /* FunViewController.m in Sources */,
 				1F3BE8A02181A26700037DA3 /* AppDelegate.m in Sources */,
 				1F3BE8BC2181C5E300037DA3 /* Person+DefaultOJ.m in Sources */,
+				1F924B16218373740012876D /* TestObj.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

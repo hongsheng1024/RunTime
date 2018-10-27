@@ -9,6 +9,10 @@
 #import "Person.h"
 #import <objc/message.h>
 
+@interface Person()
+
+@end
+
 @implementation Person
 
 - (void)getInformation{
@@ -48,4 +52,8 @@ void buyMethod(id self, SEL sel){
 
 
 
+
+
 @end
+
+

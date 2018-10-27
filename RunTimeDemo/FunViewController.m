@@ -10,8 +10,11 @@
 #import "Person.h"
 #import <objc/message.h>
 #import "Person+DefaultOJ.h"
+#import "TestObj.h"
 
 @interface FunViewController ()
+
+@property(nonatomic, strong)TestObj *objs;
 
 @end
 
@@ -32,6 +35,10 @@
         [self getClassMsg];
     }else if (_atIndex == 4){
         [self addPropertyForCategory];
+    }else if (_atIndex == 5){
+        [self testForKVC];
+    }else if (_atIndex == 6){
+        [self TestForKVO];
     }
     
     
@@ -128,6 +135,37 @@
     Person *p = [[Person alloc]init];
     p.phone = @"1234321";
     NSLog(@"电话: %@", p.phone);
+}
+
+//参考 https://www.jianshu.com/p/b9f020a8b4c9
+#pragma mark - KVC
+- (void)testForKVC{
+    TestObj *obj = [[TestObj alloc]init];
+    [obj setValue:@"小明" forKey:@"name"];
+    NSString *name = [obj valueForKey:@"name"];
+}
+
+#pragma mark - KVO
+- (void)TestForKVO{
+    self.objs = [[TestObj alloc]init];
+    //self.objs.phone = @"1234";
+    //此行注册监听后，objs由TestObj类变成NSKVONotyfing_TestObj类。
+    [self.objs addObserver:self forKeyPath:@"age" options:NSKeyValueObservingOptionNew context:nil];
+   
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
+    NSLog(@"%@监听到%@属性的改变为%@", object, keyPath, change[@"new"]);
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    //self.objs.phone = @"kvo实现啦";
+    self.objs.age = 10;
+    
+}
+
+- (void)dealloc{
+    [self.objs removeObserver:self forKeyPath:@"phone"];
 }
 
 
