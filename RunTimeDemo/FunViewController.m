@@ -150,7 +150,7 @@
     self.objs = [[TestObj alloc]init];
     //self.objs.phone = @"1234";
     //此行注册监听后，objs由TestObj类变成NSKVONotyfing_TestObj类。
-    [self.objs addObserver:self forKeyPath:@"age" options:NSKeyValueObservingOptionNew context:nil];
+    [self.objs addObserver:self forKeyPath:@"name" options:NSKeyValueObservingOptionNew context:nil];
    
 }
 
@@ -160,8 +160,8 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     //self.objs.phone = @"kvo实现啦";
-    self.objs.age = 10;
-    
+    //self.objs.age = 10;
+    [self.objs setValue:@"达州" forKey:@"name"];
 }
 
 - (void)dealloc{

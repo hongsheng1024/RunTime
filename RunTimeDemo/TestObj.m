@@ -73,11 +73,13 @@
     return nil;
 }
 
+
 #pragma mark - KVO
 - (id)init{
     self = [super init];
     if (self) {
         _age = 20;
+        _name = @"小王";
     }
     return self;
 }
