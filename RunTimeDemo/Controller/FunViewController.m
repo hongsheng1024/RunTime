@@ -16,6 +16,8 @@
 
 @property(nonatomic, strong)TestObj *objs;
 
+@property(nonatomic, assign)CGFloat  counts;
+
 @end
 
 @implementation FunViewController
@@ -39,6 +41,8 @@
         [self testForKVC];
     }else if (_atIndex == 6){
         [self TestForKVO];
+    }else if (_atIndex == 7){
+        [self blockProduct];
     }
     
     
@@ -167,6 +171,13 @@
 - (void)dealloc{
     [self.objs removeObserver:self forKeyPath:@"phone"];
 }
+
+/***************************** Block ***********************************/
+- (void)blockProduct{
+    
+}
+
+
 
 
 - (void)didReceiveMemoryWarning {
