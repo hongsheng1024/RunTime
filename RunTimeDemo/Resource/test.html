@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <!--登录按钮-->
+    <button id="loginID" style="font-size: 18px height:60px width=80px">JS调OC01</button>
+    <br>
+    <button onclick="btnClick1()"  style="font-size: 18px height:60px width=80px">btnClick1</button>
+    <br>
+    <button onclick="btnClick2()" style="font-size: 18px height:60px width=80px">btnClick2</button>
+    <br>
+    <button onclick="btnClick3()" style="font-size: 18px height:60px width=80px">btnClick3</button>
+    <br>
+    <!-- iOS调用JS数据显示框 -->
+    <dic style="font-size: 14px">显示点击OC调用JS01按钮传来的数据</div>
+    <div id = "returnValue" style = "font-size: 14px; border: 1px dotted; height: 50px;"> </div>
+
+    <script>
+        
+        /********************** JS调OC ***************************/
+        var loginBtn = document.getElementById("loginID");
+        loginBtn.onclick = function () {
+            var token = "js_tokenString";
+            loginSuccess(token);
+        }
+
+        //登录成功
+        function loginSuccess(token) {
+            var action = "loginSuccess";
+            jsToOc(action, token);
+
+        }
+
+        //JS调用OC入口
+        function jsToOc(action, params) {
+            var url = "jsToOc://" + action + "?" + params;
+            window.location.href = url;
+        }
+    
+        function btnClick1() {
+             window.location.href = "rrcc://showMobile"
+        }
+    
+        function btnClick2() {
+             window.location.href = "rrcc://showName_?xiaohuang"
+        }
+    
+        function btnClick3() {
+             window.location.href = "rrcc://showSendNumber_msg_?13300001111&go climbing this weekend"
+        }
+    
+    
+        /********************** OC调JS ***************************/
+        function ocToJs(action, params) {
+            document.getElementById("returnValue").innerHTML = action + '?' + params;
+        }
+    
+        function alertMobile() {
+            alert('alertMobile 我是手机号是:13300001111')
+        }
+    
+        function alertName(msg) {
+            alert('alertName 你好 ' + msg + ', 我也很高兴见到你')
+        }
+    
+        function alertSendMsg(num,msg) {
+            alert('alertSendMsg这是我的手机号:' + num + ',' + msg + '!!')
+        }
+        
+        
+    </script>
+
+</body>
+</html>

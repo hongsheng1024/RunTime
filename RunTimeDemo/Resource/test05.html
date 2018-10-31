@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <!--alert按钮-->
+    <button onclick = "showAlert()" style = "font-size: 18px;">alert(message)</button>
+
+    <!--confirm按钮-->
+    <button onclick = "showConfirm()" style = "font-size: 18px;">confirm(message)</button>
+
+    <!--prompt按钮-->
+    <button onclick = "showPrompt()" style = "font-size: 18px;">prompt(prompt, defaultText)</button>
+
+    <script>
+        /********************** JS调OC ***************************/
+        //! 调用alert(message)
+        function showAlert() {
+            alert("js_alertMessage");
+        }
+    
+        //! 调用confirm(message)
+        function showConfirm() {
+            confirm("js_confirmMessage");
+        }
+    
+        //! 调用prompt(prompt, defaultMessage)
+        function showPrompt() {
+            prompt("js_prompt", "js_prompt_defaultMessage");
+        }
+    
+    
+        /********************** OC调JS ***************************/
+        function ocToJs(action, params) {
+            document.getElementById("returnValue").innerHTML = action + '?' + params;
+        }
+    
+        function alertMobile() {
+            alert('alertMobile 我是手机号是:13300001111')
+        }
+    
+        function alertName(msg) {
+            alert('alertName 你好 ' + msg + ', 我也很高兴见到你')
+        }
+    
+        function alertSendMsg(num,msg) {
+            alert('alertSendMsg这是我的手机号:' + num + ',' + msg + '!!')
+        }
+        
+        
+    </script>
+
+</body>
+</html>
